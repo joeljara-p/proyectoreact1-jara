@@ -1,0 +1,19 @@
+.detail {
+  background-color: white;
+  padding: 32px;
+  display: flex;
+  gap: 32px;
+  border-radius: 16px;
+}
+
+.detail img {
+  width: 300px;
+}
+
+button {
+  padding: 10px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}

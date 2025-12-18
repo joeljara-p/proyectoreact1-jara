@@ -1,0 +1,9 @@
+.cart-widget {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cart-widget img {
+  width: 28px;
+}
