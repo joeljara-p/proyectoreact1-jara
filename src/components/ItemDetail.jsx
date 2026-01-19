@@ -1,7 +1,17 @@
+import { useState } from "react";
 import ItemCount from "./ItemCount";
+import { useCart } from "../context/CartContext";
 import "./ItemDetail.css";
 
-const ItemDetail = ({ name, description, price, stock, img }) => {
+const ItemDetail = ({ id, name, description, price, stock, img }) => {
+  const { addItem } = useCart();
+  const [added, setAdded] = useState(false);
+
+  const handleAdd = (quantity) => {
+    addItem({ id, name, price, stock, img }, quantity);
+    setAdded(true);
+  };
+
   return (
     <div className="detail">
       <img src={img} alt={name} />
@@ -10,7 +20,12 @@ const ItemDetail = ({ name, description, price, stock, img }) => {
         <p>{description}</p>
         <p><strong>${price}</strong></p>
         <p>Stock: {stock}</p>
-        <ItemCount stock={stock} />
+
+        {!added ? (
+          <ItemCount stock={stock} onAdd={handleAdd} />
+        ) : (
+          <p>✔ Producto agregado</p>
+        )}
       </div>
     </div>
   );
