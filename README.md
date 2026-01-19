@@ -1,16 +1,48 @@
-# React + Vite
+# El Rancho - E-commerce React + Firebase
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🔥 Descripción
+**El Rancho** es una aplicación web de e-commerce desarrollada con **React** y conectada a **Firebase Firestore**.  
+Permite a los usuarios ver un catálogo de productos, filtrar por categorías, ver el detalle de cada producto, agregar al carrito, y realizar una compra final con generación de orden en Firestore.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tecnologías utilizadas
 
-## React Compiler
+- **React**
+- **React Router**
+- **Firebase Firestore**
+- **Context API (Carrito de compras)**
+- **CSS (estilos personalizados)**
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+---
 
-## Expanding the ESLint configuration
+## 🧩 Funcionalidades
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### ✅ Catálogo de productos
+- Listado dinámico desde Firestore.
+- Filtro por categorías (Perros / Gatos).
+- Visualización en formato tarjeta con imagen, nombre y precio.
+
+### ✅ Detalle del producto
+- Vista con descripción completa.
+- Selección de cantidad mediante `ItemCount`.
+- Validación de stock.
+
+### ✅ Carrito de compras
+- Estado global con **Context API**.
+- Mostrar productos agregados, cantidad, subtotal y total.
+- Eliminar productos y vaciar carrito.
+
+### ✅ Checkout y generación de orden
+- Formulario con datos del comprador.
+- Validaciones básicas (nombre, email, teléfono).
+- Guarda la orden en Firestore y entrega el ID de compra.
+
+### ✅ Navegación SPA
+- React Router para cambiar de vistas sin recargar la página.
+- Barra de navegación con enlaces y widget del carrito.
+
+---
+
+## 📁 Estructura del proyecto
+
