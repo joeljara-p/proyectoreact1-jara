@@ -5,8 +5,6 @@ import "./CartWidget.css";
 const CartWidget = () => {
   const { totalItems } = useCart();
 
-  if (totalItems === 0) return null;
-
   return (
     <Link to="/cart" className="cart-widget">
       <img

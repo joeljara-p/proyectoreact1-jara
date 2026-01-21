@@ -1,25 +1,85 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
-  background-color: #f9fafb;
+  background-color: #eaedf0;
 }
 
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 40px;
+/* HERO */
+.hero {
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/proyecto-reac-37a24.firebasestorage.app/o/petfondo.jpg?alt=media&token=8ca097c7-1a20-4740-8b9e-1d4e183513d9");
+  background-size: cover;
+  background-position: center;
+  height: 280px; /* <-- altura más angosta */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: #fff;
 }
 
-.error {
-  padding: 40px;
+/* Capa oscura para que el texto se vea mejor */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.hero-content {
+  position: relative;
   text-align: center;
 }
+
+.hero h1 {
+  font-size: 40px;
+  margin: 0;
+}
+
+.hero p {
+  font-size: 18px;
+  margin: 10px 0 0 0;
+}
+
+/* Footer */
+footer {
+  background: #111;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.redes-sociales {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.redes-sociales img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+/* Responsivo */
 @media (max-width: 768px) {
-  .detail {
-    flex-direction: column;
+  .hero {
+    height: 220px;
   }
 
-  .navbar {
-    padding: 0 16px;
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 16px;
   }
 }

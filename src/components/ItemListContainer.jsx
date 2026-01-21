@@ -13,7 +13,6 @@ const ItemListContainer = ({ greeting }) => {
   useEffect(() => {
     setLoading(true);
 
-    // <-- CAMBIO AQUÍ
     const productsCollection = collection(db, "items");
 
     const q = categoryId
@@ -22,8 +21,6 @@ const ItemListContainer = ({ greeting }) => {
 
     getDocs(q)
       .then((snapshot) => {
-        console.log("📌 snapshot.docs:", snapshot.docs);
-
         const products = snapshot.docs.map((doc) => {
           const data = doc.data();
           return {
@@ -32,12 +29,10 @@ const ItemListContainer = ({ greeting }) => {
             description: data.description,
             img: data.img,
             stock: data.stock,
-            price: data.valor,
+            price: data.valor || data.price || 0,
             category: data.category,
           };
         });
-
-        console.log("📌 Productos:", products);
 
         setItems(products);
       })

@@ -1,22 +1,27 @@
-const productos = [
-  {
-    id: "1",
-    name: "Alimento Premium Perro",
-    price: 18990,
-    description: "Alimento balanceado premium para perros.",
-    stock: 10,
-    category: "perros",
-    img: "/img/alimetroperrop.jpg"
-  },
-  {
-    id: "2",
-    name: "Arena Sanitaria Gato",
-    price: 7990,
-    description: "Arena sanitaria de alta absorción.",
-    stock: 15,
-    category: "gatos",
-    img: "/img/arenagato.jpg"
-  }
-];
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase/config";
 
-export default productos;
+/**
+ * Obtiene todos los productos desde Firestore
+ * Cada producto debe tener:
+ * - name
+ * - valor
+ * - stock
+ * - categoria
+ * - img (URL pública de Firebase Storage)
+ */
+export const getProductos = async () => {
+  try {
+    const querySnapshot = await getDocs(collection(db, "productos"));
+
+    const productos = querySnapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
+
+    return productos;
+  } catch (error) {
+    console.error("Error al obtener productos:", error);
+    return [];
+  }
+};

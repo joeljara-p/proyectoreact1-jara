@@ -23,6 +23,11 @@ const CheckoutForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    if (cart.length === 0) {
+      alert("El carrito está vacío.");
+      return;
+    }
+
     const order = {
       buyer,
       items: cart,
@@ -31,7 +36,6 @@ const CheckoutForm = () => {
     };
 
     const ordersCollection = collection(db, "orders");
-
     const docRef = await addDoc(ordersCollection, order);
 
     setOrderId(docRef.id);
@@ -45,7 +49,9 @@ const CheckoutForm = () => {
       {orderId ? (
         <div>
           <h3>✔ Compra realizada</h3>
-          <p>Tu ID de orden es: <strong>{orderId}</strong></p>
+          <p>
+            Tu ID de orden es: <strong>{orderId}</strong>
+          </p>
         </div>
       ) : (
         <form onSubmit={handleSubmit}>

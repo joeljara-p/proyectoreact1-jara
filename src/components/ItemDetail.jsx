@@ -18,7 +18,9 @@ const ItemDetail = ({ id, name, description, price, stock, img }) => {
       <div>
         <h2>{name}</h2>
         <p>{description}</p>
-        <p><strong>${price}</strong></p>
+        <p>
+          <strong>${price}</strong>
+        </p>
         <p>Stock: {stock}</p>
 
         {!added ? (

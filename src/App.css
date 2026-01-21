@@ -1,68 +1,159 @@
-/* Reset y estilo base */
+:root {
+  --primary: #27ae60;
+  --secondary: #2ecc71;
+  --danger: #e74c3c;
+}
+
+/* =========================
+   GLOBAL
+========================= */
 body {
-  margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #f9fafb;
-  color: #1f2937;
+  margin: 0;
+  padding: 0;
+  background-color: #eaedf0;
+  color: #111;
 }
 
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 40px;
-}
-
-/* Estilo de errores (404, etc.) */
-.error {
-  padding: 40px;
-  text-align: center;
-  font-size: 24px;
-  color: #ef4444; /* rojo */
-}
-
-/* Botones generales */
-.btn {
-  display: inline-block;
-  text-decoration: none;
-  background-color: #2563eb;
-  color: white;
-  padding: 10px 16px;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-  background-color: #1d4ed8;
-}
-
-/* Contenedor de productos en grid */
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 24px;
-}
-
-/* Detalle de producto */
-.detail {
+/* =========================
+   HERO
+========================= */
+.hero {
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/proyecto-reac-37a24.firebasestorage.app/o/petfondo.jpg?alt=media&token=8ca097c7-1a20-4740-8b9e-1d4e183513d9");
+  background-size: cover;
+  background-position: center;
+  height: 280px;
   display: flex;
-  gap: 40px;
-  background-color: white;
-  padding: 32px;
-  border-radius: 16px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: #fff;
 }
 
-.detail img {
-  width: 300px;
-  object-fit: contain;
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
 }
 
-/* Tipografía general */
-h1, h2, h3 {
-  margin: 0 0 8px 0;
+.hero-content {
+  position: relative;
+  text-align: center;
 }
 
-p {
-  margin: 4px 0;
+.hero h1 {
+  font-size: 40px;
+  margin: 0;
+  font-weight: bold;
+}
+
+.hero p {
+  font-size: 18px;
+  margin: 10px 0 0 0;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+.navbar {
+  background: rgba(39, 174, 96, 0.8);
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  background: #111;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.redes-sociales {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.redes-sociales img {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: .3s;
+}
+
+.redes-sociales img:hover {
+  transform: scale(1.1);
+}
+
+/* =========================
+   CARRO (cart)
+========================= */
+.cart-container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 15px;
+}
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cart-items {
+  max-height: 65vh;
+  overflow-y: auto;
+}
+
+.cart-card {
+  background: #fff;
+  color: #111;
+  padding: 15px;
+  border-radius: 12px;
+  margin: 10px 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  .hero {
+    height: 220px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .cart-container {
+    width: 95%;
+  }
+}
+.btn-remove {
+  background: var(--danger);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform .2s ease;
+}
+
+.btn-remove:hover {
+  transform: scale(1.05);
 }

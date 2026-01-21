@@ -13,7 +13,6 @@ const ItemDetailContainer = () => {
   useEffect(() => {
     setLoading(true);
 
-    // 🔥 CAMBIO AQUÍ
     const docRef = doc(db, "items", itemId);
 
     getDoc(docRef)
@@ -27,7 +26,7 @@ const ItemDetailContainer = () => {
             description: data.description,
             img: data.img,
             stock: data.stock,
-            price: data.valor,
+            price: data.valor || data.price || 0,
             category: data.category,
           };
 
