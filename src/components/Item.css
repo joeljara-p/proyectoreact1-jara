@@ -17,20 +17,20 @@
 .item-card h3 {
   font-size: 18px;
   margin: 10px 0;
-  color: #111;
+  color: rgb(17, 17, 17);
 }
 
 .item-card p {
   font-size: 16px;
   font-weight: 700;
-  color: #111;   /* <-- importante */
+  color: rgb(17, 17, 17);   /* <-- importante */
   margin: 8px 0;
 }
 
 .btn {
   margin-top: auto;
   text-decoration: none;
-  background-color: #2563eb;
+  background-color: rgb(37, 99, 235);
   color: white;
   padding: 8px;
   text-align: center;

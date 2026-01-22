@@ -43,7 +43,7 @@ const CheckoutForm = () => {
   };
 
   return (
-    <div className="container">
+    <div className="checkout-container">
       <h2>Checkout</h2>
 
       {orderId ? (
@@ -54,7 +54,7 @@ const CheckoutForm = () => {
           </p>
         </div>
       ) : (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="checkout-form">
           <input
             type="text"
             name="name"
